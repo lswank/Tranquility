@@ -15,7 +15,6 @@
 		7F4587840BF6492B003BA26C /* QSCIFilterWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4587830BF6492B003BA26C /* QSCIFilterWindow.m */; };
 		7F87C58F106EFFF000962DC4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F87C58E106EFFF000962DC4 /* Carbon.framework */; };
 		7F87C6B7106F435F00962DC4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F87C6B5106F435F00962DC4 /* MainMenu.xib */; };
-		7F93F59C0BF1807100745665 /* Tranquility.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F93F59B0BF1807100745665 /* Tranquility.icns */; };
 		7FDB707A0BF95FE200E82B16 /* QSLMUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB70790BF95FE200E82B16 /* QSLMUMonitor.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -44,7 +43,6 @@
 		7F4587830BF6492B003BA26C /* QSCIFilterWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSCIFilterWindow.m; sourceTree = "<group>"; };
 		7F87C58E106EFFF000962DC4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		7F87C6B6106F435F00962DC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7F93F59B0BF1807100745665 /* Tranquility.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Tranquility.icns; sourceTree = "<group>"; };
 		7FDB70780BF95FE200E82B16 /* QSLMUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLMUMonitor.h; sourceTree = "<group>"; };
 		7FDB70790BF95FE200E82B16 /* QSLMUMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLMUMonitor.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				7F0F1D5F0BF41DDC0053F387 /* Moon.png */,
 				7F0F1D600BF41DDC0053F387 /* Sun.png */,
 				7F0F1D610BF41DDC0053F387 /* SunPressed.png */,
-				7F93F59B0BF1807100745665 /* Tranquility.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 			);
@@ -192,7 +189,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tranquility" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -220,7 +217,6 @@
 			files = (
 				EDE22D1E18A363BF008889E7 /* Sparkle.framework in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				7F93F59C0BF1807100745665 /* Tranquility.icns in Resources */,
 				ED9CDD0E18A239FE00369472 /* TranquilityMenuPressed.png in Resources */,
 				7F0F1D620BF41DDC0053F387 /* MoonPressed.png in Resources */,
 				ED9CDD0A18A239F000369472 /* Images.xcassets in Resources */,
@@ -273,6 +269,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer: Lorenzo Swank (D69JGG394R)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -294,9 +291,9 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer: Lorenzo Swank (D69JGG394R)";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Lorenzo/Projects/Tranquility,
@@ -320,6 +317,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
