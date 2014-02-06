@@ -21,34 +21,34 @@
 #define LMUCOMMON_H
 
 enum {
-  kGetSensorReadingID   = 0,  // getSensorReading(int *, int *)
-  kGetLEDBrightnessID   = 1,  // getLEDBrightness(int, int *)
-  kSetLEDBrightnessID   = 2,  // setLEDBrightness(int, int, int *)
-  kSetLEDFadeID         = 3,  // setLEDFade(int, int, int, int *)
-  
-  // other firmware-related functions
-  // verifyFirmwareID     = 4,  // verifyFirmware(int *)
-  // getFirmwareVersionID = 5,  // getFirmwareVersion(int *)
-  
-  // other flashing-related functions
-  // ...
+    kGetSensorReadingID   = 0,  // getSensorReading(int *, int *)
+    kGetLEDBrightnessID   = 1,  // getLEDBrightness(int, int *)
+    kSetLEDBrightnessID   = 2,  // setLEDBrightness(int, int, int *)
+    kSetLEDFadeID         = 3,  // setLEDFade(int, int, int, int *)
+    
+    // other firmware-related functions
+    // verifyFirmwareID     = 4,  // verifyFirmware(int *)
+    // getFirmwareVersionID = 5,  // getFirmwareVersion(int *)
+    
+    // other flashing-related functions
+    // ...
 };
 
 #endif
 
 
 @interface QSLMUMonitor : NSObject {
-  NSTimer *checkTimer;
-  io_connect_t dataPort;
-  
-  
-  SInt32 left;
-  SInt32 right;
-  
-  id delegate;
-  SInt32 lowerBound;
-  SInt32 upperBound;
-  BOOL sendNotifications;
+    NSTimer *checkTimer;
+    io_connect_t dataPort;
+    
+    
+    SInt32 left;
+    SInt32 right;
+    
+    id delegate;
+    SInt32 lowerBound;
+    SInt32 upperBound;
+    BOOL sendNotifications;
 }
 
 - (id)delegate;

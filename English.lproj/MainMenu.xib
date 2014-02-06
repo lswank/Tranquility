@@ -259,21 +259,22 @@
             <connections>
                 <outlet property="prefsWindow" destination="230" id="232"/>
                 <outlet property="statusMenu" destination="243" id="255"/>
+                <outlet property="versionTextField" destination="YP2-Og-5tl" id="RmM-se-eS3"/>
             </connections>
         </customObject>
         <userDefaultsController representsSharedInstance="YES" id="209" userLabel="Shared Defaults"/>
         <window title="Tranquility" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="230" userLabel="Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="463" y="357" width="316" height="483"/>
+            <rect key="contentRect" x="463" y="357" width="316" height="510"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="116.91500000000001" height="100"/>
             <view key="contentView" id="231">
-                <rect key="frame" x="0.0" y="0.0" width="316" height="483"/>
+                <rect key="frame" x="0.0" y="0.0" width="316" height="510"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <levelIndicator verticalHuggingPriority="750" id="371">
-                        <rect key="frame" x="178" y="-112" width="82" height="16"/>
+                        <rect key="frame" x="178" y="-85" width="82" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <levelIndicatorCell key="cell" alignment="left" doubleValue="800" maxValue="1600" levelIndicatorStyle="continuousCapacity" id="440"/>
                         <connections>
@@ -286,7 +287,7 @@
                         </connections>
                     </levelIndicator>
                     <textField verticalHuggingPriority="750" id="309">
-                        <rect key="frame" x="0.0" y="-192" width="86" height="675"/>
+                        <rect key="frame" x="0.0" y="-165" width="86" height="675"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" enabled="NO" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="430">
                             <font key="font" metaFont="system"/>
@@ -295,7 +296,7 @@
                         </textFieldCell>
                     </textField>
                     <button id="208">
-                        <rect key="frame" x="104" y="335" width="107" height="20"/>
+                        <rect key="frame" x="104" y="362" width="107" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Invert screen" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="417">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -306,7 +307,7 @@
                         </connections>
                     </button>
                     <button id="214">
-                        <rect key="frame" x="104" y="221" width="107" height="18"/>
+                        <rect key="frame" x="104" y="248" width="107" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Monochrome" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="418">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -317,7 +318,7 @@
                         </connections>
                     </button>
                     <button id="215">
-                        <rect key="frame" x="104" y="315" width="122" height="18"/>
+                        <rect key="frame" x="104" y="342" width="122" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Hide desktop" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="419">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -328,7 +329,7 @@
                         </connections>
                     </button>
                     <button id="216">
-                        <rect key="frame" x="104" y="295" width="128" height="18"/>
+                        <rect key="frame" x="104" y="322" width="128" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Disable shadows" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="420">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -339,12 +340,12 @@
                         </connections>
                     </button>
                     <imageView id="217">
-                        <rect key="frame" x="11" y="408" width="64" height="64"/>
+                        <rect key="frame" x="11" y="435" width="64" height="64"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="421"/>
                     </imageView>
                     <colorWell id="218">
-                        <rect key="frame" x="124" y="172" width="35" height="20"/>
+                        <rect key="frame" x="124" y="199" width="35" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
@@ -357,7 +358,7 @@
                         </connections>
                     </colorWell>
                     <button id="237">
-                        <rect key="frame" x="104" y="201" width="135" height="18"/>
+                        <rect key="frame" x="104" y="228" width="135" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Tint Colors" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="422">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -368,7 +369,7 @@
                         </connections>
                     </button>
                     <colorWell id="252">
-                        <rect key="frame" x="173" y="172" width="35" height="20"/>
+                        <rect key="frame" x="173" y="199" width="35" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
@@ -381,7 +382,7 @@
                         </connections>
                     </colorWell>
                     <button verticalHuggingPriority="750" id="264">
-                        <rect key="frame" x="104" y="377" width="133" height="25"/>
+                        <rect key="frame" x="104" y="404" width="133" height="25"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="roundTextured" title="Switch to Night" alternateTitle="Switch to Day" bezelStyle="texturedRounded" image="Moon" imagePosition="left" alignment="left" alternateImage="Sun" borderStyle="border" inset="2" id="423">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -397,7 +398,7 @@ DQ
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="282">
-                        <rect key="frame" x="124" y="155" width="35" height="13"/>
+                        <rect key="frame" x="122" y="182" width="39" height="13"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="White" id="424">
                             <font key="font" metaFont="label"/>
@@ -406,7 +407,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="283">
-                        <rect key="frame" x="173" y="152" width="35" height="16"/>
+                        <rect key="frame" x="173" y="179" width="35" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Black" id="425">
                             <font key="font" metaFont="label"/>
@@ -415,7 +416,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" id="297">
-                        <rect key="frame" x="122" y="250" width="149" height="21"/>
+                        <rect key="frame" x="122" y="277" width="149" height="21"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="428">
                             <font key="font" size="12" name="Helvetica"/>
@@ -426,7 +427,7 @@ DQ
                         </connections>
                     </slider>
                     <button id="299">
-                        <rect key="frame" x="104" y="275" width="179" height="18"/>
+                        <rect key="frame" x="104" y="302" width="179" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Adjust screen brightness" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="429">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -437,7 +438,7 @@ DQ
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="310">
-                        <rect key="frame" x="11" y="224" width="62" height="13"/>
+                        <rect key="frame" x="11" y="251" width="62" height="13"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Colors" id="431">
                             <font key="font" metaFont="systemBold" size="10"/>
@@ -446,7 +447,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="311">
-                        <rect key="frame" x="11" y="340" width="62" height="13"/>
+                        <rect key="frame" x="11" y="367" width="62" height="13"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Display" id="432">
                             <font key="font" metaFont="systemBold" size="10"/>
@@ -455,7 +456,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="313">
-                        <rect key="frame" x="106" y="448" width="114" height="17"/>
+                        <rect key="frame" x="106" y="475" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Tranquility" id="433">
                             <font key="font" metaFont="system"/>
@@ -464,7 +465,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="314">
-                        <rect key="frame" x="106" y="423" width="163" height="22"/>
+                        <rect key="frame" x="106" y="449" width="163" height="23"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="An update to Blacktree's Nocturne" id="434">
                             <font key="font" metaFont="miniSystem"/>
@@ -473,7 +474,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="ep6-qy-25K">
-                        <rect key="frame" x="106" y="422" width="147" height="11"/>
+                        <rect key="frame" x="106" y="449" width="147" height="11"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="©2014 Lorenzo Swank" id="xFg-8e-gEr">
                             <font key="font" metaFont="miniSystem"/>
@@ -482,7 +483,7 @@ DQ
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="316">
-                        <rect key="frame" x="223" y="174" width="47" height="16"/>
+                        <rect key="frame" x="223" y="201" width="47" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" inset="2" id="435">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -497,7 +498,7 @@ Gw
                         </connections>
                     </button>
                     <button id="321">
-                        <rect key="frame" x="102" y="-70" width="192" height="18"/>
+                        <rect key="frame" x="102" y="-43" width="192" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Use light sensors to switch" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="438">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -509,7 +510,7 @@ Gw
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="348">
-                        <rect key="frame" x="8" y="-69" width="62" height="13"/>
+                        <rect key="frame" x="8" y="-42" width="62" height="13"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Sensors" id="439">
                             <font key="font" metaFont="systemBold" size="10"/>
@@ -518,17 +519,17 @@ Gw
                         </textFieldCell>
                     </textField>
                     <imageView id="375">
-                        <rect key="frame" x="115" y="-92" width="16" height="16"/>
+                        <rect key="frame" x="115" y="-65" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Moon" id="441"/>
                     </imageView>
                     <imageView id="377">
-                        <rect key="frame" x="116" y="-130" width="16" height="16"/>
+                        <rect key="frame" x="116" y="-103" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Sun" id="442"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" id="389">
-                        <rect key="frame" x="11" y="381" width="62" height="13"/>
+                        <rect key="frame" x="11" y="408" width="62" height="13"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Preview" id="443">
                             <font key="font" metaFont="systemBold" size="10"/>
@@ -537,7 +538,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" id="320">
-                        <rect key="frame" x="169" y="-101" width="100" height="25"/>
+                        <rect key="frame" x="169" y="-74" width="100" height="25"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1500" doubleValue="255.49451261758804" tickMarkPosition="below" numberOfTickMarks="2" sliderType="linear" id="437">
                             <font key="font" size="12" name="Helvetica"/>
@@ -548,7 +549,7 @@ Gw
                         </connections>
                     </slider>
                     <slider verticalHuggingPriority="750" id="319">
-                        <rect key="frame" x="169" y="-133" width="100" height="26"/>
+                        <rect key="frame" x="169" y="-106" width="100" height="26"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1500" doubleValue="684.06593799591064" tickMarkPosition="above" numberOfTickMarks="2" sliderType="linear" id="436">
                             <font key="font" size="12" name="Helvetica"/>
@@ -559,7 +560,7 @@ Gw
                         </connections>
                     </slider>
                     <textField verticalHuggingPriority="750" id="396">
-                        <rect key="frame" x="133" y="-109" width="34" height="10"/>
+                        <rect key="frame" x="133" y="-82" width="34" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1000" id="444">
                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" hasThousandSeparators="NO" thousandSeparator="," id="408">
@@ -578,7 +579,7 @@ Gw
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" id="402">
-                        <rect key="frame" x="133" y="-88" width="34" height="10"/>
+                        <rect key="frame" x="133" y="-61" width="34" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1000" id="445">
                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" hasThousandSeparators="NO" thousandSeparator="," id="406">
@@ -597,7 +598,7 @@ Gw
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" id="403">
-                        <rect key="frame" x="133" y="-128" width="34" height="10"/>
+                        <rect key="frame" x="133" y="-101" width="34" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1000" id="446">
                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" hasThousandSeparators="NO" thousandSeparator="," id="407">
@@ -616,7 +617,7 @@ Gw
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" id="453">
-                        <rect key="frame" x="15" y="130" width="62" height="17"/>
+                        <rect key="frame" x="15" y="157" width="62" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Menu bar" id="454">
                             <font key="font" metaFont="systemBold" size="10"/>
@@ -625,7 +626,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="pgK-FM-wVI">
-                        <rect key="frame" x="15" y="55" width="62" height="17"/>
+                        <rect key="frame" x="15" y="78" width="62" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Info" id="oQZ-v5-ObW">
                             <font key="font" metaFont="systemBold" size="10"/>
@@ -634,7 +635,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <button id="455">
-                        <rect key="frame" x="102" y="131" width="202" height="18"/>
+                        <rect key="frame" x="102" y="158" width="202" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Dim when inactive" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="456">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -645,7 +646,7 @@ Gw
                         </connections>
                     </button>
                     <slider verticalHuggingPriority="750" id="507">
-                        <rect key="frame" x="120" y="106" width="151" height="21"/>
+                        <rect key="frame" x="120" y="133" width="151" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="508"/>
                         <connections>
@@ -655,7 +656,7 @@ Gw
                         </connections>
                     </slider>
                     <textField verticalHuggingPriority="750" id="536">
-                        <rect key="frame" x="124" y="80" width="160" height="22"/>
+                        <rect key="frame" x="124" y="107" width="160" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Menu bar options are active in both Night and Day modes." id="537">
                             <font key="font" metaFont="miniSystem"/>
@@ -664,11 +665,20 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="rQE-mN-QHb">
-                        <rect key="frame" x="124" y="17" width="160" height="55"/>
+                        <rect key="frame" x="106" y="20" width="192" height="55"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="lub-gR-A4j">
                             <font key="font" metaFont="miniSystem"/>
                             <string key="title">Icon image credit: NASA/JPL. Thanks to Blacktree for licensing Nocturne under Apache 2.0 so we could continue to fix it up after he moved on to other projects.</string>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="YP2-Og-5tl">
+                        <rect key="frame" x="106" y="70" width="160" height="25"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Version String" id="a3u-Me-gQH">
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -694,6 +704,12 @@ Gw
                         <action selector="showPreferences:" target="206" id="285"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Check for Updates" id="O8d-cc-2AK">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="gvu-Nu-VgM" id="OCj-9d-jJ1"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="250">
                     <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                 </menuItem>
@@ -704,6 +720,7 @@ Gw
                 </menuItem>
             </items>
         </menu>
+        <customObject id="gvu-Nu-VgM" customClass="SUUpdater"/>
     </objects>
     <resources>
         <image name="Moon" width="16" height="16"/>

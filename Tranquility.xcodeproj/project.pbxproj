@@ -24,6 +24,8 @@
 		ED9CDD0A18A239F000369472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0918A239F000369472 /* Images.xcassets */; };
 		ED9CDD0D18A239FE00369472 /* TranquilityMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0B18A239FE00369472 /* TranquilityMenu.png */; };
 		ED9CDD0E18A239FE00369472 /* TranquilityMenuPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0C18A239FE00369472 /* TranquilityMenuPressed.png */; };
+		EDE22D1D18A363A1008889E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE22D1C18A363A1008889E7 /* Sparkle.framework */; };
+		EDE22D1E18A363BF008889E7 /* Sparkle.framework in Resources */ = {isa = PBXBuildFile; fileRef = EDE22D1C18A363A1008889E7 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,7 @@
 		ED9CDD0918A239F000369472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tranquility/Images.xcassets; sourceTree = "<group>"; };
 		ED9CDD0B18A239FE00369472 /* TranquilityMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TranquilityMenu.png; sourceTree = "<group>"; };
 		ED9CDD0C18A239FE00369472 /* TranquilityMenuPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TranquilityMenuPressed.png; sourceTree = "<group>"; };
+		EDE22D1C18A363A1008889E7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				7F0FB4EC0BF7650A007329FE /* IOKit.framework in Frameworks */,
 				7F87C58F106EFFF000962DC4 /* Carbon.framework in Frameworks */,
+				EDE22D1D18A363A1008889E7 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +90,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDE22D1C18A363A1008889E7 /* Sparkle.framework */,
 				7F0FB4EB0BF7650A007329FE /* IOKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -213,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE22D1E18A363BF008889E7 /* Sparkle.framework in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				7F93F59C0BF1807100745665 /* Tranquility.icns in Resources */,
 				ED9CDD0E18A239FE00369472 /* TranquilityMenuPressed.png in Resources */,
@@ -266,7 +272,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer: Lorenzo Swank (D69JGG394R)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Lorenzo/Projects/Tranquility,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -285,6 +296,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer: Lorenzo Swank (D69JGG394R)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Lorenzo/Projects/Tranquility,
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

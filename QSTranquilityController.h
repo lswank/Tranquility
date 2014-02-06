@@ -8,34 +8,35 @@
 
 @interface QSTranquilityController : NSObject
 {
-  CGGammaValue gOriginalRedTable[ 256 ];
-  CGGammaValue gOriginalGreenTable[ 256 ];
-  CGGammaValue gOriginalBlueTable[ 256 ];
-  NSMutableArray *desktopWindows;
-  NSMutableArray *overlayWindows;
-  IBOutlet NSWindow *prefsWindow;
-  IBOutlet NSMenu *statusMenu;
-  BOOL shouldQuit;
-  
-  BOOL enabled;
-  
-  NSColor *whiteColor;
-  NSColor *blackColor;
-  NSStatusItem *statusItem;
-  float originalBrightness;
-  QSLMUMonitor *monitor;
-  
-  
-  NSWindow *menuWindow;
-  QSCIFilterWindow *menuHueOverlay;
-  QSCIFilterWindow *menuInvertOverlay;
-  NSArray *windows;
-  BOOL trackingMenu;
-  BOOL visible;
-  BOOL shouldHide;
-  BOOL correctHue;
-  BOOL dimMenu;
-  BOOL invertMenuAlways;
+    CGGammaValue gOriginalRedTable[ 256 ];
+    CGGammaValue gOriginalGreenTable[ 256 ];
+    CGGammaValue gOriginalBlueTable[ 256 ];
+    NSMutableArray *desktopWindows;
+    NSMutableArray *overlayWindows;
+    IBOutlet NSWindow *prefsWindow;
+    IBOutlet NSMenu *statusMenu;
+    IBOutlet NSTextField *versionTextField;
+    BOOL shouldQuit;
+    
+    BOOL enabled;
+    
+    NSColor *whiteColor;
+    NSColor *blackColor;
+    NSStatusItem *statusItem;
+    float originalBrightness;
+    QSLMUMonitor *monitor;
+    
+    
+    NSWindow *menuWindow;
+    QSCIFilterWindow *menuHueOverlay;
+    QSCIFilterWindow *menuInvertOverlay;
+    NSArray *windows;
+    BOOL trackingMenu;
+    BOOL visible;
+    BOOL shouldHide;
+    BOOL correctHue;
+    BOOL dimMenu;
+    BOOL invertMenuAlways;
 }
 
 @property(nonatomic, assign) BOOL dimMenu;
@@ -64,5 +65,13 @@
 
 - (void)removeOverlays;
 - (void)setupOverlays;
+
+
+
+@end
+
+@interface QSTranquilityController (MenuCovers)
+
+- (void)setDimMenu:(BOOL)flag;
 
 @end
