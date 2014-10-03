@@ -516,8 +516,8 @@ pascal OSStatus AppEventHandler( EventHandlerCallRef inCallRef, EventRef inEvent
         [self applyEnabled:value];
     } else {
         
-        float fadeout = 0.5;
-        float fadein = 0.5;
+        float fadeout = 0.1;
+        float fadein = 0.1;
         CGDisplayFadeReservationToken token;
         CGDisplayErr err;
         err = CGAcquireDisplayFadeReservation (3.0, &token); // 1
@@ -561,14 +561,10 @@ pascal OSStatus AppEventHandler( EventHandlerCallRef inCallRef, EventRef inEvent
 //  err = CGReleaseDisplayFadeReservation (token); // 4
 //}
 
-
-
-
-
 - (void)setEnabled:(BOOL)value {
     if (enabled != value) {
         enabled = value;
-        [self applyEnabled:value withFade:YES];
+        [self applyEnabled:value withFade:NO];
     }
 }
 
@@ -599,11 +595,6 @@ pascal OSStatus AppEventHandler( EventHandlerCallRef inCallRef, EventRef inEvent
 
 //@end
 
-
-
-
-
-
 //@implementation QSTranquilityController (MenuCovers)
 // Why did this need to be a seperate category?
 // Not sure that it makes sense.
@@ -614,6 +605,14 @@ pascal OSStatus AppEventHandler( EventHandlerCallRef inCallRef, EventRef inEvent
 // Whatever that means
 
 - (void)modeDidChange:(int)mode {
+    
+    [self setEnabled:YES];
+
+    // Looks as though we’re able to detect iTerm2 with mode 4
+    if (mode == 4) {
+        [self setEnabled:NO];
+    }
+    
     if (!invertMenuAlways) return;
     
     if (mode) {
