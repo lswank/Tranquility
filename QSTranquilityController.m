@@ -57,6 +57,9 @@ pascal OSStatus AppEventHandler( EventHandlerCallRef inCallRef, EventRef inEvent
 @implementation QSTranquilityController
 @synthesize dimMenu, invertMenuAlways;
 
+// preference key to store a global shortcut between launches
+NSString* const kPreferenceGlobalShortcut = @"GlobalShortcut";
+
 + (void)initialize {
     [[NSUserDefaults standardUserDefaults] registerDefaults:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSUserDefaults"]];
     
@@ -154,6 +157,16 @@ pascal OSStatus AppEventHandler( EventHandlerCallRef inCallRef, EventRef inEvent
         [self showPreferences:self];
         [defaults setValue:[NSDate date] forKey:@"lastLaunchDate"];
     }
+    
+    // Assign the preference key and the shortcut view will take care of persistence
+    self.shortcutView.associatedUserDefaultsKey = kPreferenceGlobalShortcut;
+
+    // Execute your block of code automatically when user triggers a shortcut from preferences
+    [ MASShortcut registerGlobalShortcutWithUserDefaultsKey: kPreferenceGlobalShortcut
+                                                    handler:
+     ^{
+         [self performSelector:@selector(toggle) withObject:nil afterDelay:0.0];
+     } ];
     
 }
 - (BOOL)canUseSensors {
