@@ -6,6 +6,8 @@
 #import "QSCIFilterWindow.h"
 #import "QSLMUMonitor.h"
 
+#import <MASShortcut.h>
+
 @interface QSTranquilityController : NSObject
 {
     CGGammaValue gOriginalRedTable[ 256 ];
@@ -38,6 +40,8 @@
     BOOL dimMenu;
     BOOL invertMenuAlways;
 }
+
+@property ( nonatomic, assign ) IBOutlet MASShortcutView* shortcutView; // should be weak, oh well.
 
 @property(nonatomic, assign) BOOL dimMenu;
 @property(nonatomic, assign) BOOL invertMenuAlways;

@@ -23,6 +23,11 @@
 		ED9CDD0A18A239F000369472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0918A239F000369472 /* Images.xcassets */; };
 		ED9CDD0D18A239FE00369472 /* TranquilityMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0B18A239FE00369472 /* TranquilityMenu.png */; };
 		ED9CDD0E18A239FE00369472 /* TranquilityMenuPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0C18A239FE00369472 /* TranquilityMenuPressed.png */; };
+		EDA31E861AA30FEA003ED631 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA31E7D1AA30FEA003ED631 /* MASShortcut.m */; };
+		EDA31E871AA30FEA003ED631 /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA31E7F1AA30FEA003ED631 /* MASShortcut+Monitoring.m */; };
+		EDA31E881AA30FEA003ED631 /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA31E811AA30FEA003ED631 /* MASShortcut+UserDefaults.m */; };
+		EDA31E891AA30FEA003ED631 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA31E831AA30FEA003ED631 /* MASShortcutView.m */; };
+		EDA31E8A1AA30FEA003ED631 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA31E851AA30FEA003ED631 /* MASShortcutView+UserDefaults.m */; };
 		EDE22D1D18A363A1008889E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE22D1C18A363A1008889E7 /* Sparkle.framework */; };
 		EDE22D1E18A363BF008889E7 /* Sparkle.framework in Resources */ = {isa = PBXBuildFile; fileRef = EDE22D1C18A363A1008889E7 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +59,16 @@
 		ED9CDD0918A239F000369472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tranquility/Images.xcassets; sourceTree = "<group>"; };
 		ED9CDD0B18A239FE00369472 /* TranquilityMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TranquilityMenu.png; sourceTree = "<group>"; };
 		ED9CDD0C18A239FE00369472 /* TranquilityMenuPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TranquilityMenuPressed.png; sourceTree = "<group>"; };
+		EDA31E7C1AA30FEA003ED631 /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcut.h; sourceTree = "<group>"; };
+		EDA31E7D1AA30FEA003ED631 /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcut.m; sourceTree = "<group>"; };
+		EDA31E7E1AA30FEA003ED631 /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
+		EDA31E7F1AA30FEA003ED631 /* MASShortcut+Monitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+Monitoring.m"; sourceTree = "<group>"; };
+		EDA31E801AA30FEA003ED631 /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
+		EDA31E811AA30FEA003ED631 /* MASShortcut+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+UserDefaults.m"; sourceTree = "<group>"; };
+		EDA31E821AA30FEA003ED631 /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
+		EDA31E831AA30FEA003ED631 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
+		EDA31E841AA30FEA003ED631 /* MASShortcutView+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcutView+UserDefaults.h"; sourceTree = "<group>"; };
+		EDA31E851AA30FEA003ED631 /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
 		EDE22D1C18A363A1008889E7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +90,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EDA31E7B1AA30FDD003ED631 /* MASShortcut */,
 				ED9CDD0518A239D600369472 /* QSTranquilityController.h */,
 				ED9CDD0618A239D600369472 /* QSTranquilityController.m */,
 				7F4587820BF6492B003BA26C /* QSCIFilterWindow.h */,
@@ -162,6 +178,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EDA31E7B1AA30FDD003ED631 /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				EDA31E7C1AA30FEA003ED631 /* MASShortcut.h */,
+				EDA31E7D1AA30FEA003ED631 /* MASShortcut.m */,
+				EDA31E7E1AA30FEA003ED631 /* MASShortcut+Monitoring.h */,
+				EDA31E7F1AA30FEA003ED631 /* MASShortcut+Monitoring.m */,
+				EDA31E801AA30FEA003ED631 /* MASShortcut+UserDefaults.h */,
+				EDA31E811AA30FEA003ED631 /* MASShortcut+UserDefaults.m */,
+				EDA31E821AA30FEA003ED631 /* MASShortcutView.h */,
+				EDA31E831AA30FEA003ED631 /* MASShortcutView.m */,
+				EDA31E841AA30FEA003ED631 /* MASShortcutView+UserDefaults.h */,
+				EDA31E851AA30FEA003ED631 /* MASShortcutView+UserDefaults.m */,
+			);
+			name = MASShortcut;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,9 +269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				EDA31E861AA30FEA003ED631 /* MASShortcut.m in Sources */,
 				ED9CDD0718A239D600369472 /* QSTranquilityController.m in Sources */,
 				7F4587840BF6492B003BA26C /* QSCIFilterWindow.m in Sources */,
+				EDA31E891AA30FEA003ED631 /* MASShortcutView.m in Sources */,
+				EDA31E881AA30FEA003ED631 /* MASShortcut+UserDefaults.m in Sources */,
+				EDA31E8A1AA30FEA003ED631 /* MASShortcutView+UserDefaults.m in Sources */,
 				7FDB707A0BF95FE200E82B16 /* QSLMUMonitor.m in Sources */,
+				EDA31E871AA30FEA003ED631 /* MASShortcut+Monitoring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
