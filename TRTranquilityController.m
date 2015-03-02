@@ -1,4 +1,15 @@
-#import "QSTranquilityController.h"
+//  TRTranqulityController.m
+//  Tranquility
+//
+//  Assumed by Lorenzo Swank on 2014 FEB 05 and
+//  updated for Mac OS 10.9.
+//
+//  Orginally Created by Nicholas Jitkoff on 5/8/07 as Nocturne.
+//  Licensed under the Apache 2.0 license and distributed as such
+//  on https://code.google.com/p/blacktree-nocturne
+//
+
+#import "TRTranquilityController.h"
 #include <stdio.h>
 #include <IOKit/graphics/IOGraphicsLib.h>
 #include <ApplicationServices/ApplicationServices.h>
@@ -8,7 +19,7 @@ void CGDisplayForceToGray();
 void CGDisplaySetInvertedPolarity();
 void CGSSetDebugOptions(int);
 
-@interface NSStatusItem (QSNSStatusItemPrivate)
+@interface NSStatusItem (TRNSStatusItemPrivate)
 - (NSWindow *)_window;
 @end
 
@@ -65,7 +76,7 @@ pascal OSStatus AppEventHandler(EventHandlerCallRef inCallRef, EventRef inEvent,
 
 @end
 
-@implementation QSTranquilityController
+@implementation TRTranquilityController
 @synthesize dimMenu, invertMenuAlways;
 
 // preference key to store a global shortcut between launches
@@ -208,7 +219,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
 - (BOOL)canUseSensors
 {
-    return [QSLMUMonitor hasSensors];
+    return [TRLMUMonitor hasSensors];
 }
 
 - (BOOL)useLightSensors
@@ -222,7 +233,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     {
         if (!monitor)
         {
-            monitor = [[QSLMUMonitor alloc] init];
+            monitor = [[TRLMUMonitor alloc] init];
             [monitor setDelegate:self];
             [monitor setMonitorSensors:YES];
             NSUserDefaultsController *dController = [NSUserDefaultsController sharedUserDefaultsController];
@@ -242,17 +253,17 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (QSLMUMonitor *)lightMonitor
+- (TRLMUMonitor *)lightMonitor
 {
     return monitor;
 }
 
-- (void)monitor:(QSLMUMonitor *)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value
+- (void)monitor:(TRLMUMonitor *)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value
 {
     [self setEnabled:YES];
 }
 
-- (void)monitor:(QSLMUMonitor *)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value
+- (void)monitor:(TRLMUMonitor *)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value
 {
     [self setEnabled:NO];
 }
@@ -491,7 +502,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 {
     while ([overlayWindows count] > 0)
     {
-        QSCIFilterWindow *overlayWindow = [overlayWindows lastObject];
+        TRCIFilterWindow *overlayWindow = [overlayWindows lastObject];
         [overlayWindow release];
         [overlayWindows removeLastObject];
         overlayWindow = nil;
@@ -502,11 +513,11 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 {
     for (int i = 0; i < [[NSScreen screens] count]; ++i)
     {
-        QSCIFilterWindow *overlayWindow;
+        TRCIFilterWindow *overlayWindow;
 
         if ([overlayWindows count] <= i)
         {
-            overlayWindow = [[QSCIFilterWindow alloc] init];
+            overlayWindow = [[TRCIFilterWindow alloc] init];
             [overlayWindow setLevel:kCGMaximumWindowLevel];
             [overlayWindow setFilter:@"CIHueAdjust"];
             [overlayWindow setFilterValues:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:M_PI], @"inputAngle", nil]];
@@ -532,7 +543,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
     while ([overlayWindows count] > [[NSScreen screens] count])
     {
-        QSCIFilterWindow *overlayWindow = [overlayWindows lastObject];
+        TRCIFilterWindow *overlayWindow = [overlayWindows lastObject];
         [overlayWindow release];
         [overlayWindows removeLastObject];
         overlayWindow = nil;
@@ -725,7 +736,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
 //@end
 
-//@implementation QSTranquilityController (MenuCovers)
+//@implementation TRTranquilityController (MenuCovers)
 // Why did this need to be a seperate category?
 // Not sure that it makes sense.
 // Let's do this instead:
@@ -859,7 +870,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
     [[NSAnimationContext currentContext] setDuration:1.0];
     [[menuWindow animator] setAlphaValue:1.0];
-    //[QSBatteryDotView openDotWindows];
+    //[TRBatteryDotView openDotWindows];
 
     [versionTextField setStringValue:[NSString stringWithFormat:@"Version %@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]]];
 
@@ -938,14 +949,14 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
 - (void)createOverlays
 {
-    menuHueOverlay = [[QSCIFilterWindow alloc] init];
+    menuHueOverlay = [[TRCIFilterWindow alloc] init];
     [menuHueOverlay setLevel:kCGStatusWindowLevel + 1];
     [menuHueOverlay setFilter:@"CIHueAdjust"];
     [menuHueOverlay setFilterValues:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:M_PI], @"inputAngle", nil]];
     [menuHueOverlay setCollectionBehavior:NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorStationary | NSWindowCollectionBehaviorIgnoresCycle];
     [menuHueOverlay setSticky:YES];
 
-    menuInvertOverlay = [[QSCIFilterWindow alloc] init];
+    menuInvertOverlay = [[TRCIFilterWindow alloc] init];
     [menuInvertOverlay setLevel:kCGStatusWindowLevel + 1];
     [menuInvertOverlay setFilter:@"CIColorInvert"];
     [menuInvertOverlay setCollectionBehavior:NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorStationary | NSWindowCollectionBehaviorIgnoresCycle];

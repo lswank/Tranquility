@@ -1,5 +1,5 @@
 //
-//  QSLMUMonitor.m
+//  TRLMUMonitor.m
 //  Tranquility
 //
 //  Assumed by Lorenzo Swank on 2014 FEB 05 and
@@ -10,10 +10,10 @@
 //  on https://code.google.com/p/blacktree-nocturne
 //
 
-#import "QSLMUMonitor.h"
+#import "TRLMUMonitor.h"
 
 
-@implementation QSLMUMonitor
+@implementation TRLMUMonitor
 + (void)initialize
 {
     //[self setKeys:[NSArray arrayWithObject:@"monitorSensors"] triggerChangeNotificationsForDependentKey:@"fuzzyAverage"];

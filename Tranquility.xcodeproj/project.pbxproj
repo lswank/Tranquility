@@ -12,14 +12,14 @@
 		7F0F1D640BF41DDC0053F387 /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0F1D600BF41DDC0053F387 /* Sun.png */; };
 		7F0F1D650BF41DDC0053F387 /* SunPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F0F1D610BF41DDC0053F387 /* SunPressed.png */; };
 		7F0FB4EC0BF7650A007329FE /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0FB4EB0BF7650A007329FE /* IOKit.framework */; };
-		7F4587840BF6492B003BA26C /* QSCIFilterWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4587830BF6492B003BA26C /* QSCIFilterWindow.m */; };
+		7F4587840BF6492B003BA26C /* TRCIFilterWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4587830BF6492B003BA26C /* TRCIFilterWindow.m */; };
 		7F87C58F106EFFF000962DC4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F87C58E106EFFF000962DC4 /* Carbon.framework */; };
 		7F87C6B7106F435F00962DC4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F87C6B5106F435F00962DC4 /* MainMenu.xib */; };
-		7FDB707A0BF95FE200E82B16 /* QSLMUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB70790BF95FE200E82B16 /* QSLMUMonitor.m */; };
+		7FDB707A0BF95FE200E82B16 /* TRLMUMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDB70790BF95FE200E82B16 /* TRLMUMonitor.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		ED9CDD0718A239D600369472 /* QSTranquilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9CDD0618A239D600369472 /* QSTranquilityController.m */; };
+		ED9CDD0718A239D600369472 /* TRTranquilityController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9CDD0618A239D600369472 /* TRTranquilityController.m */; };
 		ED9CDD0A18A239F000369472 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0918A239F000369472 /* Images.xcassets */; };
 		ED9CDD0D18A239FE00369472 /* TranquilityMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0B18A239FE00369472 /* TranquilityMenu.png */; };
 		ED9CDD0E18A239FE00369472 /* TranquilityMenuPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = ED9CDD0C18A239FE00369472 /* TranquilityMenuPressed.png */; };
@@ -44,17 +44,17 @@
 		7F0F1D600BF41DDC0053F387 /* Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sun.png; sourceTree = "<group>"; };
 		7F0F1D610BF41DDC0053F387 /* SunPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SunPressed.png; sourceTree = "<group>"; };
 		7F0FB4EB0BF7650A007329FE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-		7F4587820BF6492B003BA26C /* QSCIFilterWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = QSCIFilterWindow.h; sourceTree = "<group>"; };
-		7F4587830BF6492B003BA26C /* QSCIFilterWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = QSCIFilterWindow.m; sourceTree = "<group>"; };
+		7F4587820BF6492B003BA26C /* TRCIFilterWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TRCIFilterWindow.h; sourceTree = "<group>"; };
+		7F4587830BF6492B003BA26C /* TRCIFilterWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TRCIFilterWindow.m; sourceTree = "<group>"; };
 		7F87C58E106EFFF000962DC4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		7F87C6B6106F435F00962DC4 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		7FDB70780BF95FE200E82B16 /* QSLMUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSLMUMonitor.h; sourceTree = "<group>"; };
-		7FDB70790BF95FE200E82B16 /* QSLMUMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSLMUMonitor.m; sourceTree = "<group>"; };
+		7FDB70780BF95FE200E82B16 /* TRLMUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLMUMonitor.h; sourceTree = "<group>"; };
+		7FDB70790BF95FE200E82B16 /* TRLMUMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLMUMonitor.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Tranquility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tranquility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5333A3512ECB6270000B377 /* CGSPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGSPrivate.h; sourceTree = "<group>"; };
-		ED9CDD0518A239D600369472 /* QSTranquilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSTranquilityController.h; sourceTree = "<group>"; };
-		ED9CDD0618A239D600369472 /* QSTranquilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSTranquilityController.m; sourceTree = "<group>"; };
+		ED9CDD0518A239D600369472 /* TRTranquilityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTranquilityController.h; sourceTree = "<group>"; };
+		ED9CDD0618A239D600369472 /* TRTranquilityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTranquilityController.m; sourceTree = "<group>"; };
 		ED9CDD0818A239E700369472 /* Tranquility_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tranquility_Prefix.pch; sourceTree = "<group>"; };
 		ED9CDD0918A239F000369472 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tranquility/Images.xcassets; sourceTree = "<group>"; };
 		ED9CDD0B18A239FE00369472 /* TranquilityMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TranquilityMenu.png; sourceTree = "<group>"; };
@@ -91,12 +91,12 @@
 			isa = PBXGroup;
 			children = (
 				EDA31E7B1AA30FDD003ED631 /* MASShortcut */,
-				ED9CDD0518A239D600369472 /* QSTranquilityController.h */,
-				ED9CDD0618A239D600369472 /* QSTranquilityController.m */,
-				7F4587820BF6492B003BA26C /* QSCIFilterWindow.h */,
-				7F4587830BF6492B003BA26C /* QSCIFilterWindow.m */,
-				7FDB70780BF95FE200E82B16 /* QSLMUMonitor.h */,
-				7FDB70790BF95FE200E82B16 /* QSLMUMonitor.m */,
+				ED9CDD0518A239D600369472 /* TRTranquilityController.h */,
+				ED9CDD0618A239D600369472 /* TRTranquilityController.m */,
+				7F4587820BF6492B003BA26C /* TRCIFilterWindow.h */,
+				7F4587830BF6492B003BA26C /* TRCIFilterWindow.m */,
+				7FDB70780BF95FE200E82B16 /* TRLMUMonitor.h */,
+				7FDB70790BF95FE200E82B16 /* TRLMUMonitor.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -270,12 +270,12 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				EDA31E861AA30FEA003ED631 /* MASShortcut.m in Sources */,
-				ED9CDD0718A239D600369472 /* QSTranquilityController.m in Sources */,
-				7F4587840BF6492B003BA26C /* QSCIFilterWindow.m in Sources */,
+				ED9CDD0718A239D600369472 /* TRTranquilityController.m in Sources */,
+				7F4587840BF6492B003BA26C /* TRCIFilterWindow.m in Sources */,
 				EDA31E891AA30FEA003ED631 /* MASShortcutView.m in Sources */,
 				EDA31E881AA30FEA003ED631 /* MASShortcut+UserDefaults.m in Sources */,
 				EDA31E8A1AA30FEA003ED631 /* MASShortcutView+UserDefaults.m in Sources */,
-				7FDB707A0BF95FE200E82B16 /* QSLMUMonitor.m in Sources */,
+				7FDB707A0BF95FE200E82B16 /* TRLMUMonitor.m in Sources */,
 				EDA31E871AA30FEA003ED631 /* MASShortcut+Monitoring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,14 +1,23 @@
-/* QSTranquilityController */
+//  TRTranquilityController.h
+//  Tranquility
+//
+//  Assumed by Lorenzo Swank on 2014 FEB 05 and
+//  updated for Mac OS 10.9.
+//
+//  Orginally Created by Nicholas Jitkoff on 5/8/07 as Nocturne.
+//  Licensed under the Apache 2.0 license and distributed as such
+//  on https://code.google.com/p/blacktree-nocturne
+//
 
 #import <Cocoa/Cocoa.h>
 #include "CGSPrivate.h"
 
-#import "QSCIFilterWindow.h"
-#import "QSLMUMonitor.h"
+#import "TRCIFilterWindow.h"
+#import "TRLMUMonitor.h"
 
 #import <MASShortcut.h>
 
-@interface QSTranquilityController : NSObject
+@interface TRTranquilityController : NSObject
 {
     CGGammaValue gOriginalRedTable[ 256 ];
     CGGammaValue gOriginalGreenTable[ 256 ];
@@ -26,12 +35,12 @@
     NSColor *blackColor;
     NSStatusItem *statusItem;
     float originalBrightness;
-    QSLMUMonitor *monitor;
+    TRLMUMonitor *monitor;
 
 
     NSWindow *menuWindow;
-    QSCIFilterWindow *menuHueOverlay;
-    QSCIFilterWindow *menuInvertOverlay;
+    TRCIFilterWindow *menuHueOverlay;
+    TRCIFilterWindow *menuInvertOverlay;
     NSArray *windows;
     BOOL trackingMenu;
     BOOL visible;
@@ -65,7 +74,7 @@
 - (float)getDisplayBrightness;
 - (IBAction)revertGamma:(id)sender;
 
-- (QSLMUMonitor *)lightMonitor;
+- (TRLMUMonitor *)lightMonitor;
 
 - (void)removeOverlays;
 - (void)setupOverlays;
@@ -74,7 +83,7 @@
 
 @end
 
-@interface QSTranquilityController (MenuCovers)
+@interface TRTranquilityController (MenuCovers)
 
 - (void)setDimMenu:(BOOL)flag;
 

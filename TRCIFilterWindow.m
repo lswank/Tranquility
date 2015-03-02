@@ -1,12 +1,16 @@
 //
-//  QSCIEffectOverlay.m
-//  Quicksilver
+//  TRCIEffectOverlay.m
+//  Tranquility
 //
-//  Created by Nicholas Jitkoff on 11/20/05.
-//  Copyright 2005 Blacktree. All rights reserved.
+//  Assumed by Lorenzo Swank on 2014 FEB 05 and
+//  updated for Mac OS 10.9.
+//
+//  Orginally Created by Nicholas Jitkoff on 5/8/07 as Nocturne.
+//  Licensed under the Apache 2.0 license and distributed as such
+//  on https://code.google.com/p/blacktree-nocturne
 //
 
-#import "QSCIFilterWindow.h"
+#import "TRCIFilterWindow.h"
 CGSConnection cid;
 
 void DXSetWindowTag(int wid, CGSWindowTag tag, int state)
@@ -39,7 +43,7 @@ void DXSetWindowIgnoresMouse(int wid, int state)
 }
 
 #define NSRectToCGRect(r) CGRectMake(r.origin.x, r.origin.y, r.size.width, r.size.height)
-CGRect QSCGRectFromScreenFrame(NSRect rect)
+CGRect TRCGRectFromScreenFrame(NSRect rect)
 {
     CGRect screenBounds = CGDisplayBounds(kCGDirectMainDisplay);
     CGRect cgrect = NSRectToCGRect(rect);
@@ -52,7 +56,7 @@ CGRect QSCGRectFromScreenFrame(NSRect rect)
 
 CGSConnection cid;
 
-@implementation QSCIFilterWindow
+@implementation TRCIFilterWindow
 + (void)initialize
 {
     cid = _CGSDefaultConnection();
