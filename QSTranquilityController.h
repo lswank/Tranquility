@@ -19,16 +19,16 @@
     IBOutlet NSMenu *statusMenu;
     IBOutlet NSTextField *versionTextField;
     BOOL shouldQuit;
-    
+
     BOOL enabled;
-    
+
     NSColor *whiteColor;
     NSColor *blackColor;
     NSStatusItem *statusItem;
     float originalBrightness;
     QSLMUMonitor *monitor;
-    
-    
+
+
     NSWindow *menuWindow;
     QSCIFilterWindow *menuHueOverlay;
     QSCIFilterWindow *menuInvertOverlay;
@@ -41,10 +41,10 @@
     BOOL invertMenuAlways;
 }
 
-@property ( nonatomic, assign ) IBOutlet MASShortcutView* shortcutView; // should be weak, oh well.
+@property (nonatomic, assign) IBOutlet MASShortcutView *shortcutView;   // should be weak, oh well.
 
-@property(nonatomic, assign) BOOL dimMenu;
-@property(nonatomic, assign) BOOL invertMenuAlways;
+@property (nonatomic, assign) BOOL dimMenu;
+@property (nonatomic, assign) BOOL invertMenuAlways;
 
 - (IBAction)toggle:(id)sender;
 

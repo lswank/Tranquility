@@ -10,8 +10,8 @@
 #import "CGSPrivate.h"
 
 @interface QSCIFilterWindow : NSWindow {
-	CGSWindow wid;
-	void * fid;
+    CGSWindow wid;
+    void *fid;
 }
 - (void)setFilter:(NSString *)filter;
 - (void)setFilterValues:(NSDictionary *)filterValues;
@@ -19,9 +19,9 @@
 //- (void)createOverlay;
 
 // Some magical calls
-extern void CGSRemoveWindowFilter( CGSConnection cid, CGSWindow wid, void * fid );
-extern void CGSReleaseCIFilter( CGSConnection cid, void * fid );
-extern OSStatus CGSNewCIFilterByName( CGSConnection cid, CFStringRef filterName, void * fid );
-extern OSStatus CGSAddWindowFilter( CGSConnection cid, CGSWindow wid, void * fid, int value );
-extern void CGSSetCIFilterValuesFromDictionary( CGSConnection cid, void * fid, CFDictionaryRef filterValues );
+extern void CGSRemoveWindowFilter(CGSConnection cid, CGSWindow wid, void *fid);
+extern void CGSReleaseCIFilter(CGSConnection cid, void *fid);
+extern OSStatus CGSNewCIFilterByName(CGSConnection cid, CFStringRef filterName, void *fid);
+extern OSStatus CGSAddWindowFilter(CGSConnection cid, CGSWindow wid, void *fid, int value);
+extern void CGSSetCIFilterValuesFromDictionary(CGSConnection cid, void *fid, CFDictionaryRef filterValues);
 @end

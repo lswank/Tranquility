@@ -20,16 +20,17 @@
 #ifndef LMUCOMMON_H
 #define LMUCOMMON_H
 
-enum {
+enum
+{
     kGetSensorReadingID   = 0,  // getSensorReading(int *, int *)
     kGetLEDBrightnessID   = 1,  // getLEDBrightness(int, int *)
     kSetLEDBrightnessID   = 2,  // setLEDBrightness(int, int, int *)
     kSetLEDFadeID         = 3,  // setLEDFade(int, int, int, int *)
-    
+
     // other firmware-related functions
     // verifyFirmwareID     = 4,  // verifyFirmware(int *)
     // getFirmwareVersionID = 5,  // getFirmwareVersion(int *)
-    
+
     // other flashing-related functions
     // ...
 };
@@ -40,11 +41,11 @@ enum {
 @interface QSLMUMonitor : NSObject {
     NSTimer *checkTimer;
     io_connect_t dataPort;
-    
-    
+
+
     SInt32 left;
     SInt32 right;
-    
+
     id delegate;
     SInt32 lowerBound;
     SInt32 upperBound;
@@ -60,7 +61,7 @@ enum {
 - (SInt32)upperBound;
 - (void)setUpperBound:(SInt32)value;
 
-- (void) setMonitorSensors:(BOOL)flag;
+- (void)setMonitorSensors:(BOOL)flag;
 
 + (BOOL)hasSensors;
 
@@ -70,4 +71,4 @@ enum {
 
 - (void)monitor:(QSLMUMonitor *)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value;
 - (void)monitor:(QSLMUMonitor *)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value;
-@end 
+@end
