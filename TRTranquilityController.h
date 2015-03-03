@@ -22,26 +22,26 @@
     CGGammaValue gOriginalRedTable[ 256 ];
     CGGammaValue gOriginalGreenTable[ 256 ];
     CGGammaValue gOriginalBlueTable[ 256 ];
-    NSMutableArray *desktopWindows;
-    NSMutableArray *overlayWindows;
-    IBOutlet NSWindow *prefsWindow;
-    IBOutlet NSMenu *statusMenu;
-    IBOutlet NSTextField *versionTextField;
+    NSMutableArray* desktopWindows;
+    NSMutableArray* overlayWindows;
+    IBOutlet NSWindow* prefsWindow;
+    IBOutlet NSMenu* statusMenu;
+    IBOutlet NSTextField* versionTextField;
     BOOL shouldQuit;
 
     BOOL enabled;
 
-    NSColor *whiteColor;
-    NSColor *blackColor;
-    NSStatusItem *statusItem;
+    NSColor* whiteColor;
+    NSColor* blackColor;
+    NSStatusItem* statusItem;
     float originalBrightness;
-    TRLMUMonitor *monitor;
+    TRLMUMonitor* monitor;
 
 
-    NSWindow *menuWindow;
-    TRCIFilterWindow *menuHueOverlay;
-    TRCIFilterWindow *menuInvertOverlay;
-    NSArray *windows;
+    NSWindow* menuWindow;
+    TRCIFilterWindow* menuHueOverlay;
+    TRCIFilterWindow* menuInvertOverlay;
+    NSArray* windows;
     BOOL trackingMenu;
     BOOL visible;
     BOOL shouldHide;
@@ -50,7 +50,7 @@
     BOOL invertMenuAlways;
 }
 
-@property (nonatomic, assign) IBOutlet MASShortcutView *shortcutView;   // should be weak, oh well.
+@property (nonatomic, assign) IBOutlet MASShortcutView* shortcutView;   // should be weak, oh well.
 
 @property (nonatomic, assign) BOOL dimMenu;
 @property (nonatomic, assign) BOOL invertMenuAlways;
@@ -63,18 +63,18 @@
 - (BOOL)enabled;
 - (void)setEnabled:(BOOL)value;
 
-- (NSColor *)whiteColor;
-- (void)setWhiteColor:(NSColor *)value;
+- (NSColor*)whiteColor;
+- (void)setWhiteColor:(NSColor*)value;
 
-- (NSColor *)blackColor;
-- (void)setBlackColor:(NSColor *)value;
+- (NSColor*)blackColor;
+- (void)setBlackColor:(NSColor*)value;
 
 - (void)updateGamma;
 
 - (float)getDisplayBrightness;
 - (IBAction)revertGamma:(id)sender;
 
-- (TRLMUMonitor *)lightMonitor;
+- (TRLMUMonitor*)lightMonitor;
 
 - (void)removeOverlays;
 - (void)setupOverlays;

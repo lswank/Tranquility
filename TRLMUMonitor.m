@@ -44,7 +44,7 @@
     return 100.0 * (float)[self average] / [self maxValue];
 }
 
-- (void)checkValues:(NSTimer *)timer
+- (void)checkValues:(NSTimer*)timer
 {
     //IOItemCount   scalarInputCount = 0;
     //IOItemCount   scalarOutputCount = 2;

@@ -20,10 +20,10 @@ void CGDisplaySetInvertedPolarity();
 void CGSSetDebugOptions(int);
 
 @interface NSStatusItem (TRNSStatusItemPrivate)
-- (NSWindow *)_window;
+- (NSWindow*)_window;
 @end
 
-pascal OSStatus AppEventHandler(EventHandlerCallRef inCallRef, EventRef inEvent, void *controller)
+pascal OSStatus AppEventHandler(EventHandlerCallRef inCallRef, EventRef inEvent, void* controller)
 {
     OSStatus status = eventNotHandledErr;
 
@@ -59,7 +59,7 @@ pascal OSStatus AppEventHandler(EventHandlerCallRef inCallRef, EventRef inEvent,
         0, 0
     };
 
-    if (!CGSGetWindowTags(cid, wid, tags, 32))
+    if (!CGSGetWindowTags(cid, wid, (CGSWindowTag*)tags, 32))
     {
         if (flag)
         {
@@ -70,7 +70,7 @@ pascal OSStatus AppEventHandler(EventHandlerCallRef inCallRef, EventRef inEvent,
             tags[0] = tags[0] & ~0x00000800;
         }
 
-        CGSSetWindowTags(cid, wid, tags, 32);
+        CGSSetWindowTags(cid, wid, (CGSWindowTag*)tags, 32);
     }
 }
 
@@ -80,7 +80,7 @@ pascal OSStatus AppEventHandler(EventHandlerCallRef inCallRef, EventRef inEvent,
 @synthesize dimMenu, invertMenuAlways;
 
 // preference key to store a global shortcut between launches
-NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
+NSString* const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
 + (void)initialize
 {
@@ -92,19 +92,19 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     [self setKeys:[NSArray arrayWithObject:@"useLightSensors"] triggerChangeNotificationsForDependentKey:@"lightMonitor"];
 }
 
-- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag
+- (BOOL)applicationShouldHandleReopen:(NSApplication*)sender hasVisibleWindows:(BOOL)flag
 {
     [self toggle:nil];
     [sender hide:sender];
     return NO;
 }
 
-- (NSString *)toggleTitle
+- (NSString*)toggleTitle
 {
     return enabled ? @"Switch to Day" : @"Switch to Night";
 }
 
-- (NSImage *)toggleImage
+- (NSImage*)toggleImage
 {
     return enabled ? [NSImage imageNamed:@"Sun"] : [NSImage imageNamed:@"Moon"];
 }
@@ -132,7 +132,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     //CGSInvokeTransition(_CGSDefaultConnection, transHandle, 1.0);
 }
 
-- (void)applicationWillFinishLaunching:(NSNotification *)notification
+- (void)applicationWillFinishLaunching:(NSNotification*)notification
 {
     //  CGTableCount sampleCount;
     u_int32_t sampleCount;
@@ -169,7 +169,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (void)applicationDidChangeScreenParameters:(NSNotification *)aNotification
+- (void)applicationDidChangeScreenParameters:(NSNotification*)aNotification
 {
     if (!enabled)
     {
@@ -189,14 +189,14 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
+- (void)applicationDidFinishLaunching:(NSNotification*)notification
 {
-    NSNumber *enabledValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"enabled"];
+    NSNumber* enabledValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"enabled"];
 
     [self setEnabled:[enabledValue boolValue]];
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDate *lastLaunch = [defaults objectForKey:@"lastLaunchDate"];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSDate* lastLaunch = [defaults objectForKey:@"lastLaunchDate"];
 
     if (!lastLaunch)
     {
@@ -236,7 +236,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
             monitor = [[TRLMUMonitor alloc] init];
             [monitor setDelegate:self];
             [monitor setMonitorSensors:YES];
-            NSUserDefaultsController *dController = [NSUserDefaultsController sharedUserDefaultsController];
+            NSUserDefaultsController* dController = [NSUserDefaultsController sharedUserDefaultsController];
 
             [monitor bind:@"lowerBound" toObject:dController withKeyPath:@"values.lowerLightValue" options:nil];
             [monitor bind:@"upperBound" toObject:dController withKeyPath:@"values.upperLightValue" options:nil];
@@ -253,22 +253,22 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (TRLMUMonitor *)lightMonitor
+- (TRLMUMonitor*)lightMonitor
 {
     return monitor;
 }
 
-- (void)monitor:(TRLMUMonitor *)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value
+- (void)monitor:(TRLMUMonitor*)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value
 {
     [self setEnabled:YES];
 }
 
-- (void)monitor:(TRLMUMonitor *)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value
+- (void)monitor:(TRLMUMonitor*)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value
 {
     [self setEnabled:NO];
 }
 
-- (id)valueForUndefinedKey:(NSString *)key
+- (id)valueForUndefinedKey:(NSString*)key
 {
     return nil;
 }
@@ -283,7 +283,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     [self performSelector:@selector(toggle) withObject:nil afterDelay:0.0];
 }
 
-- (void)applicationWillTerminate:(NSNotification *)notification
+- (void)applicationWillTerminate:(NSNotification*)notification
 {
     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"enabled"];
     shouldQuit = YES;
@@ -292,7 +292,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
 - (void)setDesktopHidden:(BOOL)hidden
 {
-    NSWindow *desktopWindow;
+    NSWindow* desktopWindow;
 
     [desktopWindows removeAllObjects];
 
@@ -319,44 +319,54 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
+// "Future Proof" version of getDisplayBrightness that doesn't use the CGDisplayIOServicePort deprecated in 10.9.
 - (float)getDisplayBrightness
 {
-    CGDisplayErr dErr;
-    io_service_t service;
-    CGDirectDisplayID targetDisplay;
-
-    CFStringRef key = CFSTR(kIODisplayBrightnessKey);
-
-    targetDisplay = CGMainDisplayID();
-    service = CGDisplayIOServicePort(targetDisplay);
-
-    float brightness = 1.0;
-    dErr = IODisplayGetFloatParameter(service, kNilOptions, key, &brightness);
-
-    if (dErr == kIOReturnSuccess)
+    float brightness = 1.0f;
+    io_iterator_t iterator;
+    kern_return_t result = IOServiceGetMatchingServices(kIOMasterPortDefault,
+                                                        IOServiceMatching("IODisplayConnect"),
+                                                        &iterator);
+    
+    // If we were successful
+    if (result == kIOReturnSuccess)
     {
-        return brightness;
+        io_object_t service;
+        
+        while ((service = IOIteratorNext(iterator)))
+        {
+            IODisplayGetFloatParameter(service, kNilOptions, CFSTR(kIODisplayBrightnessKey), &brightness);
+            
+            // Let the object go
+            IOObjectRelease(service);
+        }
     }
-    else
-    {
-        return 1.0;
-    }
+    
+    return brightness;
 }
 
+// "Future Proof" version of setDisplayBrightness that doesn't use the CGDisplayIOServicePort deprecated in 10.9.
 - (void)setDisplayBrightness:(float)brightness
 {
-    CGDisplayErr dErr;
-    io_service_t service;
-    CGDirectDisplayID targetDisplay;
+    io_iterator_t iterator;
+    kern_return_t result = IOServiceGetMatchingServices(kIOMasterPortDefault,
+                                                        IOServiceMatching("IODisplayConnect"),
+                                                        &iterator);
 
-    CFStringRef key = CFSTR(kIODisplayBrightnessKey);
-
-    targetDisplay = CGMainDisplayID();
-    service = CGDisplayIOServicePort(targetDisplay);
-
-    if (brightness != HUGE_VALF)   // set the brightness, if requested
+    // If we were successful
+    if (result == kIOReturnSuccess)
     {
-        dErr = IODisplaySetFloatParameter(service, kNilOptions, key, brightness);
+        io_object_t service;
+
+        while ((service = IOIteratorNext(iterator)))
+        {
+            IODisplaySetFloatParameter(service, kNilOptions, CFSTR(kIODisplayBrightnessKey), brightness);
+
+            // Let the object go
+            IOObjectRelease(service);
+
+            return;
+        }
     }
 }
 
@@ -409,8 +419,8 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
         return;
     }
 
-    NSColor *whitepoint = [whiteColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
-    NSColor *blackpoint = [blackColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+    NSColor* whitepoint = [whiteColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+    NSColor* blackpoint = [blackColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 
     CGGammaValue redTable[ 256 ];
     CGGammaValue greenTable[ 256 ];
@@ -454,6 +464,11 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     for (int i = 0; i < numDisplays; i++)
     {
         cgErr = CGSetDisplayTransferByTable(displays[i], 256, redTable, greenTable, blueTable);
+
+        if (cgErr)
+        {
+            NSLog(@"CGSetDisplayTransferByTable returned %d", cgErr);
+        }
     }
 }
 
@@ -502,7 +517,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 {
     while ([overlayWindows count] > 0)
     {
-        TRCIFilterWindow *overlayWindow = [overlayWindows lastObject];
+        TRCIFilterWindow* overlayWindow = [overlayWindows lastObject];
         [overlayWindow release];
         [overlayWindows removeLastObject];
         overlayWindow = nil;
@@ -513,7 +528,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 {
     for (int i = 0; i < [[NSScreen screens] count]; ++i)
     {
-        TRCIFilterWindow *overlayWindow;
+        TRCIFilterWindow* overlayWindow;
 
         if ([overlayWindows count] <= i)
         {
@@ -543,7 +558,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
     while ([overlayWindows count] > [[NSScreen screens] count])
     {
-        TRCIFilterWindow *overlayWindow = [overlayWindows lastObject];
+        TRCIFilterWindow* overlayWindow = [overlayWindows lastObject];
         [overlayWindow release];
         [overlayWindows removeLastObject];
         overlayWindow = nil;
@@ -582,7 +597,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     {
         originalBrightness = [self getDisplayBrightness];
 
-        NSUserDefaultsController *dController = [NSUserDefaultsController sharedUserDefaultsController];
+        NSUserDefaultsController* dController = [NSUserDefaultsController sharedUserDefaultsController];
 
         [self bind:@"inverted" toObject:dController withKeyPath:@"values.inverted" options:nil];
         [self bind:@"hueCorrect" toObject:dController withKeyPath:@"values.hueCorrect" options:nil];
@@ -664,7 +679,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
                 [self applyEnabled:value];
                 //   [prefsWindow makeKeyAndOrderFront:nil];
             }
-            @catch (NSException *e)
+            @catch (NSException* e)
             {
                 NSLog(@"Error %@", e);
             }
@@ -704,12 +719,12 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (NSColor *)whiteColor
+- (NSColor*)whiteColor
 {
     return [[whiteColor retain] autorelease];
 }
 
-- (void)setWhiteColor:(NSColor *)value
+- (void)setWhiteColor:(NSColor*)value
 {
     if (whiteColor != value)
     {
@@ -719,12 +734,12 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (NSColor *)blackColor
+- (NSColor*)blackColor
 {
     return [[blackColor retain] autorelease];
 }
 
-- (void)setBlackColor:(NSColor *)value
+- (void)setBlackColor:(NSColor*)value
 {
     if (blackColor != value)
     {
@@ -778,7 +793,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
 {
     if ([keyPath isEqualToString:@"values.dimMenuOpacity"])
     {
@@ -808,14 +823,14 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 //}
 
 
-- (void)workspaceChanged:(NSNotification *)notif
+- (void)workspaceChanged:(NSNotification*)notif
 {
     int currentSpace;
     // get an array of all the windows in the current Space
     CFArrayRef windowsInSpace = CGWindowListCopyWindowInfo(kCGWindowListOptionAll | kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
 
     // now loop over the array looking for a window with the kCGWindowWorkspace key
-    for (NSMutableDictionary *thisWindow in(NSArray *) windowsInSpace)
+    for (NSMutableDictionary* thisWindow in(NSArray*) windowsInSpace)
     {
         if ([thisWindow objectForKey:(id)kCGWindowWorkspace])
         {
@@ -834,7 +849,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
     correctHue = [[NSUserDefaults standardUserDefaults] boolForKey:@"hueCorrect"];
 
-    NSUserDefaultsController *dController = [NSUserDefaultsController sharedUserDefaultsController];
+    NSUserDefaultsController* dController = [NSUserDefaultsController sharedUserDefaultsController];
     [self bind:@"dimMenu" toObject:dController withKeyPath:@"values.dimMenu" options:nil];
     [self bind:@"invertMenuAlways" toObject:dController withKeyPath:@"values.invertMenuAlways" options:nil];
     [self bind:@"useLightSensors" toObject:dController withKeyPath:@"values.useLightSensors" options:nil];
@@ -857,7 +872,7 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     [menuWindow setCollectionBehavior:NSWindowCollectionBehaviorTransient | NSWindowCollectionBehaviorStationary | NSWindowCollectionBehaviorIgnoresCycle];
     //  [menuWindow setSticky:YES];
     //[window setDelegate:[window contentView]]];
-    NSTrackingArea *area = [[[NSTrackingArea alloc] initWithRect:NSZeroRect
+    NSTrackingArea* area = [[[NSTrackingArea alloc] initWithRect:NSZeroRect
                                                          options:NSTrackingMouseEnteredAndExited | NSTrackingInVisibleRect | NSTrackingEnabledDuringMouseDrag | NSTrackingActiveAlways
                                                            owner:self
                                                         userInfo:nil] autorelease];
@@ -989,13 +1004,13 @@ NSString *const kPreferenceGlobalShortcut = @"GlobalShortcut";
     [[menuWindow animator] setAlphaValue:1.0 - dimMenuMax];
 }
 
-- (void)mouseEntered:(NSEvent *)theEvent
+- (void)mouseEntered:(NSEvent*)theEvent
 {
     [self show];
     shouldHide = NO;
 }
 
-- (void)mouseExited:(NSEvent *)theEvent
+- (void)mouseExited:(NSEvent*)theEvent
 {
     if (!trackingMenu)
     {

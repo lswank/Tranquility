@@ -57,7 +57,7 @@ typedef enum _CGSWindowOrderingMode
  * cid -- Current connection.
  * workspace -- Pointer to int value to be set to workspace number.
  */
-extern OSStatus CGSGetWorkspace(const CGSConnection cid, int *workspace);
+extern OSStatus CGSGetWorkspace(const CGSConnection cid, int* workspace);
 
 /* Retrieve workspace number associated with the workspace a particular window
  * resides on.
@@ -66,7 +66,7 @@ extern OSStatus CGSGetWorkspace(const CGSConnection cid, int *workspace);
  * wid -- Window number of window to examine.
  * workspace -- Pointer to int value to be set to workspace number.
  */
-extern OSStatus CGSGetWindowWorkspace(const CGSConnection cid, const CGSWindow wid, int *workspace);
+extern OSStatus CGSGetWindowWorkspace(const CGSConnection cid, const CGSWindow wid, int* workspace);
 
 /* Show workspace associated with a workspace number.
  *
@@ -132,11 +132,11 @@ typedef struct
     CGSTransitionType type;
     CGSTransitionOption option;
     CGSWindow wid;     /* Can be 0 for full-screen */
-    float *backColour;     /* Null for black otherwise pointer to 3 float array with RGB value */
+    float* backColour;     /* Null for black otherwise pointer to 3 float array with RGB value */
 } CGSTransitionSpec;
 
 /* Transition handling. */
-extern OSStatus CGSNewTransition(const CGSConnection cid, const CGSTransitionSpec *spec, int *pTransitionHandle);
+extern OSStatus CGSNewTransition(const CGSConnection cid, const CGSTransitionSpec* spec, int* pTransitionHandle);
 extern OSStatus CGSInvokeTransition(const CGSConnection cid, int transitionHandle, float duration);
 extern OSStatus CGSReleaseTransition(const CGSConnection cid, int transitionHandle);
 
@@ -144,32 +144,32 @@ extern OSStatus CGSReleaseTransition(const CGSConnection cid, int transitionHand
 //array ot ints (size 2?). First entry holds window tags.
 // 0x0800 is sticky bit.
 extern OSStatus CGSGetWindowTags(const CGSConnection cid, const CGSWindow wid,
-                                 CGSWindowTag *tags, int thirtyTwo);
+                                 CGSWindowTag* tags, int thirtyTwo);
 extern OSStatus CGSSetWindowTags(const CGSConnection cid, const CGSWindow wid,
-                                 CGSWindowTag *tags, int thirtyTwo);
+                                 CGSWindowTag* tags, int thirtyTwo);
 extern OSStatus CGSClearWindowTags(const CGSConnection cid, const CGSWindow wid,
-                                   CGSWindowTag *tags, int thirtyTwo);
-extern OSStatus CGSGetWindowEventMask(const CGSConnection cid, const CGSWindow wid, uint32_t *mask);
+                                   CGSWindowTag* tags, int thirtyTwo);
+extern OSStatus CGSGetWindowEventMask(const CGSConnection cid, const CGSWindow wid, uint32_t* mask);
 extern OSStatus CGSSetWindowEventMask(const CGSConnection cid, const CGSWindow wid, uint32_t mask);
 
 // Get on-screen window counts and lists.
-extern OSStatus CGSGetWindowCount(const CGSConnection cid, CGSConnection targetCID, int *outCount);
+extern OSStatus CGSGetWindowCount(const CGSConnection cid, CGSConnection targetCID, int* outCount);
 extern OSStatus CGSGetWindowList(const CGSConnection cid, CGSConnection targetCID,
-                                 int count, int *list, int *outCount);
+                                 int count, int* list, int* outCount);
 
 // Get on-screen window counts and lists.
-extern OSStatus CGSGetOnScreenWindowCount(const CGSConnection cid, CGSConnection targetCID, int *outCount);
+extern OSStatus CGSGetOnScreenWindowCount(const CGSConnection cid, CGSConnection targetCID, int* outCount);
 extern OSStatus CGSGetOnScreenWindowList(const CGSConnection cid, CGSConnection targetCID,
-                                         int count, int *list, int *outCount);
+                                         int count, int* list, int* outCount);
 
 // Per-workspace window counts and lists.
-extern OSStatus CGSGetWorkspaceWindowCount(const CGSConnection cid, int workspaceNumber, int *outCount);
+extern OSStatus CGSGetWorkspaceWindowCount(const CGSConnection cid, int workspaceNumber, int* outCount);
 extern OSStatus CGSGetWorkspaceWindowList(const CGSConnection cid, int workspaceNumber, int count,
-                                          int *list, int *outCount);
+                                          int* list, int* outCount);
 
 // Gets the level of a window
 extern OSStatus CGSGetWindowLevel(const CGSConnection cid, CGSWindow wid,
-                                  int *level);
+                                  int* level);
 
 // Window ordering
 extern OSStatus CGSOrderWindow(const CGSConnection cid, const CGSWindow wid,
@@ -177,34 +177,34 @@ extern OSStatus CGSOrderWindow(const CGSConnection cid, const CGSWindow wid,
 
 // Gets the screen rect for a window.
 extern OSStatus CGSGetScreenRectForWindow(const CGSConnection cid, CGSWindow wid,
-                                          CGRect *outRect);
+                                          CGRect* outRect);
 
 // Window appearance/position
 extern OSStatus CGSSetWindowAlpha(const CGSConnection cid, const CGSWindow wid, float alpha);
-extern OSStatus CGSSetWindowListAlpha(const CGSConnection cid, CGSWindow *wids, int count, float alpha);
-extern OSStatus CGSGetWindowAlpha(const CGSConnection cid, const CGSWindow wid, float *alpha);
-extern OSStatus CGSMoveWindow(const CGSConnection cid, const CGSWindow wid, CGPoint *point);
+extern OSStatus CGSSetWindowListAlpha(const CGSConnection cid, CGSWindow* wids, int count, float alpha);
+extern OSStatus CGSGetWindowAlpha(const CGSConnection cid, const CGSWindow wid, float* alpha);
+extern OSStatus CGSMoveWindow(const CGSConnection cid, const CGSWindow wid, CGPoint* point);
 extern OSStatus CGSSetWindowTransform(const CGSConnection cid, const CGSWindow wid, CGAffineTransform transform);
-extern OSStatus CGSGetWindowTransform(const CGSConnection cid, const CGSWindow wid, CGAffineTransform *outTransform);
-extern OSStatus CGSSetWindowTransforms(const CGSConnection cid, CGSWindow *wids, CGAffineTransform *transform, int n);
+extern OSStatus CGSGetWindowTransform(const CGSConnection cid, const CGSWindow wid, CGAffineTransform* outTransform);
+extern OSStatus CGSSetWindowTransforms(const CGSConnection cid, CGSWindow* wids, CGAffineTransform* transform, int n);
 
 extern OSStatus CGSMoveWorkspaceWindows(const CGSConnection connection, int toWorkspace, int fromWorkspace);
-extern OSStatus CGSMoveWorkspaceWindowList(const CGSConnection connection, CGSWindow *wids, int count,
+extern OSStatus CGSMoveWorkspaceWindowList(const CGSConnection connection, CGSWindow* wids, int count,
                                            int toWorkspace);
 
 // extern OSStatus CGSConnectionGetPID(const CGSConnection cid, pid_t *pid, CGSConnection b);
 
 extern OSStatus CGSGetWindowProperty(const CGSConnection cid, CGSWindow wid, CGSValue key,
-                                     CGSValue *outValue);
+                                     CGSValue* outValue);
 
 //extern OSStatus CGSWindowAddRectToDirtyShape(const CGSConnection cid, const CGSWindow wid, CGRect *rect);
 extern OSStatus CGSUncoverWindow(const CGSConnection cid, const CGSWindow wid);
 extern OSStatus CGSFlushWindow(const CGSConnection cid, const CGSWindow wid, int unknown /* 0 works */);
 
-extern OSStatus CGSGetWindowOwner(const CGSConnection cid, const CGSWindow wid, CGSConnection *ownerCid);
-extern OSStatus CGSConnectionGetPID(const CGSConnection cid, pid_t *pid, const CGSConnection ownerCid);
+extern OSStatus CGSGetWindowOwner(const CGSConnection cid, const CGSWindow wid, CGSConnection* ownerCid);
+extern OSStatus CGSConnectionGetPID(const CGSConnection cid, pid_t* pid, const CGSConnection ownerCid);
 
 // Values
-extern CGSValue CGSCreateCStringNoCopy(const char *str);
+extern CGSValue CGSCreateCStringNoCopy(const char* str);
 extern char * CGSCStringValue(CGSValue string);
 extern int CGSIntegerValue(CGSValue intVal);

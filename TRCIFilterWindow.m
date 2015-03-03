@@ -29,10 +29,20 @@ void DXSetWindowTag(int wid, CGSWindowTag tag, int state)
         if (state)
         {
             retVal = CGSSetWindowTags(cid, wid, tags, 32);
+
+            if (retVal)
+            {
+                NSLog(@"CGSSetWindowTags returned %d", retVal);
+            }
         }
         else
         {
             retVal = CGSClearWindowTags(cid, wid, tags, 32);
+
+            if (retVal)
+            {
+                NSLog(@"CGSClearWindowTags returned %d", retVal);
+            }
         }
     }
 }
@@ -89,7 +99,7 @@ CGSConnection cid;
     [super dealloc];
 }
 
-- (void)setFilter:(NSString *)filterName
+- (void)setFilter:(NSString*)filterName
 {
     if (fid)
     {
@@ -118,7 +128,7 @@ CGSConnection cid;
     }
 }
 
-- (void)setFilterValues:(NSDictionary *)filterValues
+- (void)setFilterValues:(NSDictionary*)filterValues
 {
     if (!fid)
     {

@@ -39,7 +39,7 @@ enum
 
 
 @interface TRLMUMonitor : NSObject {
-    NSTimer *checkTimer;
+    NSTimer* checkTimer;
     io_connect_t dataPort;
 
 
@@ -69,6 +69,6 @@ enum
 
 @interface NSObject (TRLMUMonitorDelegate)
 
-- (void)monitor:(TRLMUMonitor *)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value;
-- (void)monitor:(TRLMUMonitor *)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value;
+- (void)monitor:(TRLMUMonitor*)monitor passedLowerBound:(SInt32)lowerBound withValue:(SInt32)value;
+- (void)monitor:(TRLMUMonitor*)monitor passedUpperBound:(SInt32)upperBound withValue:(SInt32)value;
 @end
