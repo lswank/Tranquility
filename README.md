@@ -3,7 +3,7 @@ Tranquility
 
 Night vision for programmers. Work well in the dark. For OSX 10.9.
 
-* Download available at Pixio's site: http://www.pixio.com/auto-updating-tranquility/
+* Download available at https://github.com/lswank/Tranquility/releases/latest
 
 Orginally Created by Nicholas Jitkoff as Nocturne, and distributed through https://code.google.com/p/blacktree-nocturne. I fell in love with this program when someone was using it at WWDC a few years ago. I was sad to discover that OSX 10.9 broke it and that Nicholas was no longer maintaining it.
 
