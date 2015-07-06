@@ -583,6 +583,7 @@ NSString* const kPreferenceGlobalShortcut = @"GlobalShortcut";
     return enabled;
 }
 
+// TODO: All of the problems are in here.
 - (void)applyEnabled:(BOOL)value
 {
     if (statusItem)
@@ -762,7 +763,7 @@ NSString* const kPreferenceGlobalShortcut = @"GlobalShortcut";
 
 - (void)modeDidChange:(int)mode
 {
-    [self setEnabled:YES];
+    //[self setEnabled:YES];
 
     // Looks as though we’re able to detect iTerm2 with mode 4
     if (mode == 4)
