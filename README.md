@@ -29,7 +29,7 @@ Yes. Simply inverting colors can leave you with some very high-intensity colors 
 
 ##### *Does this use private/undocumented APIs?*
 
-Yes. You won't find it in the Mac App Store. And it may break it Apple changes major things between OS revisions. The best thing you can to do prevent this from happening is to make sure all of your friends who work at Apple HQ learn to love it. Then they'll resist the urge to break it unintentionally.
+Yes. You won't find it in the Mac App Store. And it may break if Apple changes major things between OS revisions. The best thing you can to do prevent this from happening is to make sure all of your friends who work at Apple HQ learn to love it. Then they'll resist the urge to break it unintentionally.
 
 ##### *What happened to the original dev?*
 
