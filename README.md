@@ -13,7 +13,7 @@ I am hoping that a new name and an update to make it run will breathe new life i
 
 #### *Help! My Mac says Unknown Developer! I can't run the application!*
 
-Do a web search for "disable gatekeeper on osx" and you can find out how to free your Mac from Apple-imposed limitations on what programs you can run.
+Due to [security features](http://support.apple.com/kb/ht5290) in OS X, you have to approve for the app to run once, before you can use it. The quickest way to do this is to right-click it and pick “Open”.
 
 ##### *Is my menu bar supposed to flash red like this when the application starts?*
 
